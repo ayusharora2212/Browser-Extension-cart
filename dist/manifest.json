@@ -1,0 +1,92 @@
+{
+  "name": "Ruse Reveal",
+  "description": "this is a chrome extension",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "logo.png"
+  },
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "notifications",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "assets/app.js-loader-064913a7.js"
+      ],
+      "matches": [
+        "*://www.flipkart.com/*"
+      ]
+    },
+    {
+      "js": [
+        "assets/remove.js-loader-62b5c87d.js"
+      ],
+      "matches": [
+        "https://www.flipkart.com/viewcart?exploreMode=true&preference=FLIPKART"
+      ]
+    },
+    {
+      "js": [
+        "assets/app1.js-loader-7bf7e477.js"
+      ],
+      "matches": [
+        "*://www.amazon.in/*"
+      ]
+    },
+    {
+      "js": [
+        "assets/content.js-loader-8b378816.js"
+      ],
+      "matches": [
+        "https://www.youtube.com/paid_memberships"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "*://www.flipkart.com/*"
+      ],
+      "resources": [
+        "assets/app.js-3ae5af12.js"
+      ],
+      "use_dynamic_url": true
+    },
+    {
+      "matches": [
+        "https://www.flipkart.com/*"
+      ],
+      "resources": [
+        "assets/remove.js-e2117247.js"
+      ],
+      "use_dynamic_url": true
+    },
+    {
+      "matches": [
+        "*://www.amazon.in/*"
+      ],
+      "resources": [
+        "assets/app1.js-a3bc1d47.js"
+      ],
+      "use_dynamic_url": true
+    },
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "resources": [
+        "assets/content.js-94b1c1cb.js"
+      ],
+      "use_dynamic_url": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Ruse Reveal",
+  "description": "this is a chrome extension",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_icon":"logo.png"
+  },
+  "permissions": ["scripting", "activeTab", "notifications","tabs"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.flipkart.com/*"],
+      "js": ["app.js"]
+    },
+    {
+      "matches":["https://www.flipkart.com/viewcart?exploreMode=true&preference=FLIPKART"],
+      "js":["remove.js"]},
+    {
+      "matches": ["*://www.amazon.in/*"],
+      "js": ["app1.js"]
+    },
+    {
+      "matches": ["https://www.youtube.com/paid_memberships"],
+      "js": ["content.js"]
+    }
+  ]
+}

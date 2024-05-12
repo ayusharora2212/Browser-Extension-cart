@@ -1,0 +1,1 @@
+console.log("hehehehehe");chrome.runtime.onMessage.addListener(o=>{console.log("in there"),o.type==="notification"?(console.log(o.id),console.log(o.options),chrome.notifications.create(o.id,o.options)):o.type==="id"&&chrome.notifications.create(o.id,o.options)});
